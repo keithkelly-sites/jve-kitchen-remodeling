@@ -1,0 +1,203 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="About Us | JVE Kitchen Remodeling Pittsburgh" activePage="about" description="Over 20 years of kitchen remodeling experience in Pittsburgh. PA licensed and insured. Hundreds of satisfied clients.">
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">About Us</span>
+    <h1>20+ Years of<br />Kitchen Expertise</h1>
+  </div>
+</section>
+
+<section class="about-intro reveal">
+  <div class="about-intro-inner">
+    <div class="about-text">
+      <p class="lead">JVE Kitchen Remodeling Pittsburgh boasts over two decades of experience in transforming kitchens throughout the Pittsburgh area.</p>
+      <p>Our team of skilled professionals specializes in custom cabinetry, innovative design solutions, and efficient space utilization. With a keen eye for detail, we create stunning kitchen spaces that blend functionality with aesthetics.</p>
+      <p>We offer a wide range of services, including sink installations, countertop replacements, and complete kitchen cabinet overhauls. Our designers work closely with clients to understand their unique needs and preferences, ensuring each project reflects the homeowner's personal style.</p>
+    </div>
+    <div class="about-image">
+      <img src="/images/6-kitchen-projects-fabuwood-wellington-ivory-7-147-1-1024x640.jpg" alt="JVE Kitchen Remodeling project" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section class="credentials reveal">
+  <div class="credentials-inner">
+    <div class="credential">
+      <span class="credential-number">20+</span>
+      <span class="credential-label">Years Experience</span>
+    </div>
+    <div class="credential">
+      <span class="credential-number">100s</span>
+      <span class="credential-label">Satisfied Clients</span>
+    </div>
+    <div class="credential">
+      <span class="credential-number">PA</span>
+      <span class="credential-label">Licensed & Insured</span>
+    </div>
+    <div class="credential">
+      <span class="credential-number">Free</span>
+      <span class="credential-label">Estimates</span>
+    </div>
+  </div>
+</section>
+
+<section class="about-commitment reveal">
+  <div class="about-commitment-inner">
+    <h2>Our Commitment</h2>
+    <p>JVE Kitchen Remodeling Pittsburgh's commitment to quality craftsmanship and customer satisfaction has earned us a reputation as one of the area's leading kitchen remodeling firms. We continue to deliver exceptional results, enhancing the value and enjoyment of homes across Pittsburgh.</p>
+    <p>The company prides itself on its ability to turn outdated kitchens into modern, efficient workspaces. Our expertise extends beyond kitchens, encompassing bathroom remodels and floor installations to enhance your entire home.</p>
+    <a href="/contact" class="about-cta-link">Start your project &rarr;</a>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    padding: calc(var(--space-3xl) + 60px) var(--space-lg) var(--space-2xl);
+    text-align: center;
+    background: var(--color-bg-warm);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-3xl);
+    color: var(--color-text);
+    line-height: 1.05;
+  }
+
+  .about-intro {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .about-intro-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .about-intro-inner {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+
+  .lead {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-xl);
+    color: var(--color-text);
+    line-height: 1.4;
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-text p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+
+  .about-image img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+  }
+
+  .credentials {
+    padding: var(--space-xl) var(--space-lg);
+    background: var(--color-bg-navy);
+  }
+
+  .credentials-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  @media (min-width: 700px) {
+    .credentials-inner {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .credential {
+    padding: var(--space-md);
+  }
+
+  .credential-number {
+    display: block;
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    color: var(--color-gold);
+    margin-bottom: 0.25rem;
+  }
+
+  .credential-label {
+    font-size: var(--font-size-sm);
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+
+  .about-commitment {
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+  }
+
+  .about-commitment-inner {
+    max-width: var(--max-width-narrow);
+    margin: 0 auto;
+  }
+
+  .about-commitment h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .about-commitment p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+
+  .about-cta-link {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-weight: 500;
+    color: var(--color-accent);
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+  }
+
+  .about-cta-link:hover {
+    opacity: 0.7;
+  }
+</style>

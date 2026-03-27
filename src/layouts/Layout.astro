@@ -1,0 +1,172 @@
+---
+import { Font } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activePage?: string;
+}
+
+const { title, description = "Pittsburgh's trusted kitchen remodeling company. Over 20 years of experience transforming kitchens. PA licensed and insured.", activePage = '' } = Astro.props;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <Font cssVariable="--font-display" preload />
+  <Font cssVariable="--font-body" preload />
+  <ClientRouter />
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only" style="position:absolute;top:-100px;left:0;z-index:9999;padding:1rem;background:var(--color-bg);color:var(--color-accent);font-size:1rem;">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="header-brand">
+        <span class="header-brand-name">JVE Kitchen Remodeling</span>
+      </a>
+
+      <nav class="nav-desktop">
+        {navLinks.map(link => (
+          <a href={link.href} class={activePage === link.label.toLowerCase() ? 'active' : ''}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <a href="tel:4122679806" class="header-cta">
+        (412) 267-9806
+      </a>
+
+      <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav">
+    {navLinks.map(link => (
+      <a href={link.href}>{link.label}</a>
+    ))}
+    <a href="tel:4122679806" class="mobile-nav-phone">(412) 267-9806</a>
+  </nav>
+
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-name">JVE Kitchen Remodeling Pittsburgh</div>
+          <p>
+            401 Bingham St<br />
+            Pittsburgh, PA 15203<br />
+            <a href="tel:4122679806" style="color: var(--color-gold);">(412) 267-9806</a>
+          </p>
+          <p style="margin-top: var(--space-sm);">
+            PA Licensed and Insured<br />
+            Free Estimates
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="/services">Kitchen Remodeling</a>
+          <a href="/services#cabinets">Custom Cabinets</a>
+          <a href="/services#countertops">Countertops</a>
+          <a href="/services#islands">Kitchen Islands</a>
+          <a href="/services#renovations">Renovations</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about">About Us</a>
+          <a href="/gallery">Project Gallery</a>
+          <a href="/contact">Contact</a>
+          <a href="/contact">Free Estimate</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; {new Date().getFullYear()} JVE Kitchen Remodeling Pittsburgh. All rights reserved.</span>
+        <span>Serving the greater Pittsburgh area</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let scrollHandler: ((e: Event) => void) | null = null;
+
+    document.addEventListener('astro:page-load', () => {
+      const header = document.getElementById('site-header');
+
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+      }
+
+      scrollHandler = () => {
+        if (window.scrollY > 60) {
+          header?.classList.add('scrolled');
+        } else {
+          header?.classList.remove('scrolled');
+        }
+      };
+
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      scrollHandler(new Event('scroll'));
+
+      const toggle = document.getElementById('menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      toggle?.classList.remove('open');
+      mobileNav?.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+
+      toggle?.addEventListener('click', () => {
+        const isOpen = mobileNav?.classList.toggle('open');
+        toggle.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', String(!!isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      mobileNav?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          toggle?.classList.remove('open');
+          mobileNav?.classList.remove('open');
+          toggle?.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      reveals.forEach(el => observer.observe(el));
+    });
+  </script>
+
+</body>
+</html>

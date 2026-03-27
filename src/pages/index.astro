@@ -1,0 +1,539 @@
+---
+/**
+ * Homepage — JVE Kitchen Remodeling Pittsburgh
+ *
+ * Design concept: Gallery-forward kitchen remodeling site that lets the project
+ * photography do the heavy lifting. Inspired by luxury interior design portfolios
+ * and magazine editorial layouts. The hero features a full-bleed project photo
+ * with the business name in large DM Serif Display, creating instant visual proof
+ * of craftsmanship. Clean bright palette pulled from the white cabinets and marble
+ * countertops in the photos, with navy accents for depth and gold for warmth.
+ */
+import Layout from '../layouts/Layout.astro';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "JVE Kitchen Remodeling Pittsburgh",
+  "url": "https://jve-kitchen-remodeling.keithkelly.dev",
+  "telephone": "+1-412-267-9806",
+  "email": "info@jvekitchenremodelingpittsburgh.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "401 Bingham St",
+    "addressLocality": "Pittsburgh",
+    "addressRegion": "PA",
+    "postalCode": "15203",
+    "addressCountry": "US"
+  },
+  "description": "Pittsburgh's trusted kitchen remodeling company with over 20 years of experience. Custom cabinets, countertops, islands, and full renovations.",
+  "openingHours": "Mo-Su 00:00-23:59"
+};
+---
+<Layout title="JVE Kitchen Remodeling Pittsburgh | Custom Kitchen Renovations" activePage="home">
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-image">
+    <img src="/images/julie-cox-afrer-1-1-1024x576.jpg" alt="Modern white kitchen with brick backsplash by JVE Kitchen Remodeling" />
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="hero-title-top">Pittsburgh's Kitchen</span>
+      <span class="hero-title-bottom">Remodeling Experts</span>
+    </h1>
+    <p class="hero-sub">Over 20 years of transforming kitchens. PA licensed and insured.</p>
+    <div class="hero-actions">
+      <a href="tel:4122679806" class="btn btn-gold">(412) 267-9806</a>
+      <a href="/gallery" class="btn btn-ghost">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro reveal">
+  <div class="intro-inner">
+    <div class="intro-text">
+      <span class="section-label">Why JVE</span>
+      <h2>Kitchens Built Around<br />How You Live</h2>
+      <p>JVE Kitchen Remodeling Pittsburgh has earned a reputation as one of the area's leading kitchen remodeling firms. We specialize in custom cabinetry, innovative design solutions, and efficient space utilization. From budget-friendly updates to luxurious dream kitchens, our experienced team handles every aspect of renovation.</p>
+      <a href="/about" class="text-link">Learn more about us &rarr;</a>
+    </div>
+    <div class="intro-stats">
+      <div class="stat">
+        <span class="stat-value">20+</span>
+        <span class="stat-label">Years in Business</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">100s</span>
+        <span class="stat-label">Happy Homeowners</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="featured reveal">
+  <div class="featured-header">
+    <span class="section-label">Our Work</span>
+    <h2>Recent Transformations</h2>
+  </div>
+  <div class="featured-grid">
+    <div class="featured-item large">
+      <img src="/images/canva-mae4ih5i8b4-1.jpg" alt="Luxury white kitchen with large island" loading="lazy" />
+      <div class="featured-caption">Custom Island & Cabinetry</div>
+    </div>
+    <div class="featured-item">
+      <img src="/images/6-kitchen-projects-kith-homestead-bright-white-naval-165-1-1024x640.jpg" alt="White and navy kitchen" loading="lazy" />
+      <div class="featured-caption">Modern Two-Tone Kitchen</div>
+    </div>
+    <div class="featured-item">
+      <img src="/images/englewood-kitchen-f-1.jpg" alt="Dark cabinet kitchen with island" loading="lazy" />
+      <div class="featured-caption">Espresso Cabinet Remodel</div>
+    </div>
+  </div>
+  <div class="featured-cta">
+    <a href="/gallery" class="text-link">See all projects &rarr;</a>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="services-overview reveal">
+  <div class="services-overview-inner">
+    <div class="services-overview-text">
+      <span class="section-label">Services</span>
+      <h2>Everything Your Kitchen Needs</h2>
+      <p>Whether you need new cabinets, countertops, a kitchen island, or a complete overhaul, we deliver tailored solutions for every project and budget.</p>
+    </div>
+    <div class="services-list">
+      <a href="/services#remodeling" class="service-link">
+        <span class="service-link-name">Kitchen Remodeling</span>
+        <span class="service-link-arrow">&rarr;</span>
+      </a>
+      <a href="/services#cabinets" class="service-link">
+        <span class="service-link-name">Custom Cabinets</span>
+        <span class="service-link-arrow">&rarr;</span>
+      </a>
+      <a href="/services#countertops" class="service-link">
+        <span class="service-link-name">Countertops</span>
+        <span class="service-link-arrow">&rarr;</span>
+      </a>
+      <a href="/services#islands" class="service-link">
+        <span class="service-link-name">Kitchen Islands</span>
+        <span class="service-link-arrow">&rarr;</span>
+      </a>
+      <a href="/services#renovations" class="service-link">
+        <span class="service-link-name">Full Renovations</span>
+        <span class="service-link-arrow">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="home-cta reveal">
+  <div class="home-cta-inner">
+    <h2>Ready to Transform<br />Your Kitchen?</h2>
+    <p>Free estimates for all kitchen remodeling projects in the Pittsburgh area.</p>
+    <a href="tel:4122679806" class="btn btn-gold btn-large">(412) 267-9806</a>
+    <div class="cta-sub">
+      <span>info@jvekitchenremodelingpittsburgh.com</span>
+      <span>401 Bingham St, Pittsburgh, PA 15203</span>
+    </div>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero {
+    position: relative;
+    height: 85vh;
+    min-height: 500px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.7) 0%,
+      rgba(0,0,0,0.2) 50%,
+      rgba(0,0,0,0.1) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: min(var(--max-width), 100% - var(--space-lg) * 2);
+    margin-inline: auto;
+    padding-bottom: var(--space-2xl);
+    color: #fff;
+  }
+
+  .hero-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-title-top {
+    font-family: var(--font-body), sans-serif;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title-bottom {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-hero);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-sub {
+    margin-top: var(--space-md);
+    font-size: var(--font-size-md);
+    color: rgba(255,255,255,0.7);
+    max-width: 40ch;
+  }
+
+  .hero-actions {
+    margin-top: var(--space-lg);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-gold {
+    background: var(--color-gold);
+    color: #fff;
+  }
+
+  .btn-gold:hover {
+    background: var(--color-gold-light);
+  }
+
+  .btn-ghost {
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+  }
+
+  .btn-ghost:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .btn-large {
+    padding: 1rem 2.5rem;
+    font-size: var(--font-size-lg);
+    font-family: var(--font-display), Georgia, serif;
+  }
+
+  /* ============================================================
+     INTRO
+     ============================================================ */
+  .intro {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .intro-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .intro-inner {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .section-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .intro-text h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+  }
+
+  .intro-text p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+    max-width: 55ch;
+  }
+
+  .text-link {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .text-link:hover { opacity: 0.7; }
+
+  .intro-stats {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+    background: var(--color-bg-warm);
+    border-radius: var(--border-radius);
+  }
+
+  .stat-value {
+    display: block;
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    color: var(--color-accent);
+  }
+
+  .stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  /* ============================================================
+     FEATURED PROJECTS
+     ============================================================ */
+  .featured {
+    padding: var(--space-2xl) var(--space-lg);
+    background: var(--color-bg-warm);
+  }
+
+  .featured-header {
+    max-width: var(--max-width);
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+  }
+
+  .featured-header h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+  }
+
+  .featured-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  @media (min-width: 700px) {
+    .featured-grid {
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .featured-item.large {
+      grid-row: 1 / 3;
+    }
+  }
+
+  .featured-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  .featured-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
+    transition: transform 0.6s ease;
+  }
+
+  .featured-item.large img {
+    aspect-ratio: auto;
+  }
+
+  .featured-item:hover img {
+    transform: scale(1.03);
+  }
+
+  .featured-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-sm) var(--space-md);
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+    color: #fff;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+
+  .featured-cta {
+    text-align: center;
+    margin-top: var(--space-lg);
+  }
+
+  /* ============================================================
+     SERVICES OVERVIEW
+     ============================================================ */
+  .services-overview {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .services-overview-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .services-overview-inner {
+      grid-template-columns: 1fr 1.2fr;
+      align-items: start;
+    }
+  }
+
+  .services-overview-text h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    line-height: 1.1;
+    margin-bottom: var(--space-md);
+  }
+
+  .services-overview-text p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: padding-left 0.3s ease;
+  }
+
+  .service-link:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .service-link:hover {
+    padding-left: 0.5rem;
+  }
+
+  .service-link-name {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+  }
+
+  .service-link-arrow {
+    color: var(--color-accent);
+    font-size: var(--font-size-lg);
+    transition: transform 0.3s ease;
+  }
+
+  .service-link:hover .service-link-arrow {
+    transform: translateX(4px);
+  }
+
+  /* ============================================================
+     CTA
+     ============================================================ */
+  .home-cta {
+    padding: var(--space-3xl) var(--space-lg);
+    text-align: center;
+    background: var(--color-bg-navy);
+    color: var(--color-text-on-dark);
+  }
+
+  .home-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .home-cta h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    line-height: 1.15;
+    margin-bottom: var(--space-sm);
+  }
+
+  .home-cta p {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--space-lg);
+  }
+
+  .cta-sub {
+    margin-top: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: var(--font-size-sm);
+    color: rgba(255,255,255,0.4);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-image img {
+      animation: none;
+    }
+  }
+</style>

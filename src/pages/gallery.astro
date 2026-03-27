@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  { src: "/images/julie-cox-afrer-1-1-1024x576.jpg", alt: "Modern white kitchen with brick accent wall and stainless steel appliances" },
+  { src: "/images/canva-mae4ih5i8b4-1.jpg", alt: "Luxury white kitchen with large island and upholstered seating" },
+  { src: "/images/6-kitchen-projects-kith-homestead-bright-white-naval-165-1-1024x640.jpg", alt: "White and navy blue kitchen with dining area" },
+  { src: "/images/6-kitchen-projects-fabuwood-wellington-ivory-12-139-1-1024x640.jpg", alt: "Ivory cabinet kitchen with granite countertops" },
+  { src: "/images/englewood-kitchen-f-1.jpg", alt: "Dark espresso cabinet kitchen with white countertops" },
+  { src: "/images/6-kitchen-projects-tsg-forevermark-k-series-cherry-glaze-182-1-1024x640.jpg", alt: "Cherry glaze cabinets with granite countertops" },
+  { src: "/images/6-kitchen-projects-fabuwood-wellington-ivory-7-147-1-1024x640.jpg", alt: "Wellington ivory cabinet kitchen remodel" },
+  { src: "/images/6-kitchen-projects-shiloh-herritage-polar-and-seagull-2-173-1-1024x768.jpg", alt: "Shiloh Heritage polar and seagull kitchen" },
+  { src: "/images/eleanor_truffle_gallary_image_1200-1-1024x1024.jpg", alt: "Eleanor truffle finish kitchen cabinets" },
+  { src: "/images/eleonor-gallery-1024x1024.jpg", alt: "Eleanor kitchen gallery showcase" },
+  { src: "/images/julie-cox-afrer-1_1-1-1024x768.jpg", alt: "Kitchen remodel after shot with white cabinets" },
+  { src: "/images/006-1-1024x768.jpg", alt: "Completed kitchen renovation project" },
+];
+---
+<Layout title="Gallery | JVE Kitchen Remodeling Pittsburgh" activePage="gallery" description="Browse our portfolio of kitchen remodeling projects across Pittsburgh. See the craftsmanship and attention to detail in every transformation.">
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">Our Work</span>
+    <h1>Project Gallery</h1>
+    <p class="page-hero-sub">Every kitchen tells a story. Browse our recent transformations across the Pittsburgh area.</p>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="gallery-grid">
+    {projects.map((project, i) => (
+      <div class={`gallery-item reveal ${i === 0 || i === 3 ? 'wide' : ''}`}>
+        <img src={project.src} alt={project.alt} loading={i < 4 ? "eager" : "lazy"} />
+      </div>
+    ))}
+  </div>
+</section>
+
+<section class="gallery-cta reveal">
+  <div class="gallery-cta-inner">
+    <h2>Your Kitchen Could Be Next</h2>
+    <p>Let's discuss your project. Free estimates for all kitchen remodeling work.</p>
+    <a href="/contact" class="btn btn-primary">Get a Free Estimate</a>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    padding: calc(var(--space-3xl) + 60px) var(--space-lg) var(--space-2xl);
+    text-align: center;
+    background: var(--color-bg-warm);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-3xl);
+    color: var(--color-text);
+    line-height: 1.05;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero-sub {
+    font-size: var(--font-size-md);
+    color: var(--color-text-muted);
+  }
+
+  .gallery {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .gallery-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  @media (min-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-item.wide {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 2;
+    }
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    position: relative;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.04);
+  }
+
+  .gallery-cta {
+    padding: var(--space-3xl) var(--space-lg);
+    text-align: center;
+    background: var(--color-bg-navy);
+    color: var(--color-text-on-dark);
+  }
+
+  .gallery-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .gallery-cta h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .gallery-cta p {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--space-lg);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: var(--color-gold);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-gold-light);
+  }
+</style>

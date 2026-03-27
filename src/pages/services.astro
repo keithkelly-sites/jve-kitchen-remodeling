@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Services | JVE Kitchen Remodeling Pittsburgh" activePage="services" description="Complete kitchen remodeling services in Pittsburgh. Cabinets, countertops, islands, and full renovations. PA licensed and insured.">
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">Our Services</span>
+    <h1>Complete Kitchen<br />Remodeling</h1>
+    <p class="page-hero-sub">From custom cabinets to full renovations, we handle every aspect of your kitchen transformation.</p>
+  </div>
+</section>
+
+<section class="service-block reveal" id="remodeling">
+  <div class="service-block-inner">
+    <div class="service-img">
+      <img src="/images/julie-cox-afrer-1-1-1024x576.jpg" alt="Modern white kitchen with brick backsplash" loading="lazy" />
+    </div>
+    <div class="service-text">
+      <h2>Kitchen Remodeling</h2>
+      <p>JVE Kitchen Remodeling Pittsburgh transforms cooking spaces with expert precision. Our kitchen remodeling services encompass all aspects of renovation, from layout redesign to selecting premium materials like wood cabinetry and energy-efficient lighting fixtures.</p>
+      <p>We focus on creating functional and aesthetically pleasing environments, tailoring each project to your specific needs and ensuring the remodeled kitchen enhances both your home's value and your daily life.</p>
+    </div>
+  </div>
+</section>
+
+<section class="service-block reverse reveal" id="cabinets">
+  <div class="service-block-inner">
+    <div class="service-img">
+      <img src="/images/canva-mae4ih5i8b4-1.jpg" alt="Custom white kitchen cabinets with island seating" loading="lazy" />
+    </div>
+    <div class="service-text">
+      <h2>Custom Cabinets</h2>
+      <p>We excel in crafting custom kitchen cabinets that blend style with functionality. Our skilled craftsmen design and install cabinetry that maximizes storage space while enhancing the kitchen's overall aesthetic.</p>
+      <p>Choose from a wide range of cabinet styles, finishes, and hardware options to suit diverse tastes and budgets. The same level of craftsmanship applies to bathroom remodeling projects, ensuring cohesive design throughout your home.</p>
+    </div>
+  </div>
+</section>
+
+<section class="service-block reveal" id="countertops">
+  <div class="service-block-inner">
+    <div class="service-img">
+      <img src="/images/6-kitchen-projects-fabuwood-wellington-ivory-12-139-1-1024x640.jpg" alt="Kitchen with granite countertops and ivory cabinets" loading="lazy" />
+    </div>
+    <div class="service-text">
+      <h2>Countertops</h2>
+      <p>We offer a diverse range of kitchen countertop options, including durable granite, sleek quartz, and versatile tile. Our design experts work closely with you to select the perfect countertop material that complements your kitchen's floor plan.</p>
+      <p>Our skilled installers ensure precise fitting of countertops, seamlessly integrating them with existing cabinetry and creating a polished, professional finish.</p>
+    </div>
+  </div>
+</section>
+
+<section class="service-block reverse reveal" id="islands">
+  <div class="service-block-inner">
+    <div class="service-img">
+      <img src="/images/6-kitchen-projects-kith-homestead-bright-white-naval-165-1-1024x640.jpg" alt="Kitchen island with navy blue base and white countertop" loading="lazy" />
+    </div>
+    <div class="service-text">
+      <h2>Kitchen Islands</h2>
+      <p>A well-designed kitchen island can serve as a multifunctional centerpiece for cooking, dining, and socializing. We create custom islands that enhance the overall flow of your kitchen while providing additional counter and storage space.</p>
+      <p>Whether you want a prep station, breakfast bar, or both, our team designs islands that fit your lifestyle and your kitchen's dimensions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="service-block reveal" id="renovations">
+  <div class="service-block-inner">
+    <div class="service-img">
+      <img src="/images/englewood-kitchen-f-1.jpg" alt="Dark cabinet kitchen renovation with center island" loading="lazy" />
+    </div>
+    <div class="service-text">
+      <h2>Kitchen Renovations</h2>
+      <p>Full kitchen renovations cover everything from structural changes to the finishing touches. We handle plumbing updates, electrical work, flooring, and every detail in between to create a kitchen that's completely new.</p>
+      <p>With over 20 years of experience, we know how to manage complex renovation projects efficiently, keeping your timeline and budget on track.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services-cta reveal">
+  <div class="services-cta-inner">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Free estimates for all kitchen remodeling projects in the Pittsburgh area.</p>
+    <a href="tel:4122679806" class="btn btn-primary">(412) 267-9806</a>
+    <a href="/contact" class="btn btn-outline">Request a Free Estimate</a>
+  </div>
+</section>
+
+</Layout>
+
+<style>
+  .page-hero {
+    padding: calc(var(--space-3xl) + 60px) var(--space-lg) var(--space-2xl);
+    text-align: center;
+    background: var(--color-bg-warm);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .page-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-3xl);
+    color: var(--color-text);
+    line-height: 1.05;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero-sub {
+    font-size: var(--font-size-md);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .service-block {
+    padding: var(--space-2xl) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .service-block-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .service-block-inner {
+      grid-template-columns: 1.2fr 1fr;
+    }
+
+    .service-block.reverse .service-block-inner {
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    .service-block.reverse .service-img {
+      order: 2;
+    }
+  }
+
+  .service-img img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+  }
+
+  .service-text h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+
+  .service-text p {
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+
+  .services-cta {
+    padding: var(--space-3xl) var(--space-lg);
+    text-align: center;
+    background: var(--color-bg-navy);
+    color: var(--color-text-on-dark);
+  }
+
+  .services-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .services-cta h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .services-cta p {
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--space-lg);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 0 0.5rem 0.5rem;
+  }
+
+  .btn-primary {
+    background: var(--color-gold);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-gold-light);
+  }
+
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+  }
+
+  .btn-outline:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.1);
+  }
+</style>
